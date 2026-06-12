@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mr. Jhashuva Udayagiri - Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8f9fa;
+    }
+    .profile-img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #343a40;
+    }
+    .section-title {
+      margin-top: 40px;
+      margin-bottom: 20px;
+      font-weight: bold;
+      border-left: 5px solid #007bff;
+      padding-left: 10px;
+    }
+    .platform-link {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      text-decoration: none;
+      color: #333;
+      transition: color 0.3s ease;
+    }
+    .platform-link:hover { color: #007bff; }
+    .platform-icon {
+      width: 24px;
+      height: 24px;
+      margin-right: 12px;
+      font-size: 20px;
+    }
+    .github-icon { color: #333; }
+    .leetcode-icon { color: #FFA116; }
+    .kaggle-icon { color: #20BEFF; }
+    .orcid-icon { color: #A6CE39; }
+    .email-icon { color: #EA4335; }
+
+    .membership-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    /* Oracle Badge Cards */
+    .oracle-badges-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 10px;
+    }
+    .oracle-badge-card {
+      background: #fff;
+      border: 1px solid #dee2e6;
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+      width: 180px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+      color: #333;
+    }
+    .oracle-badge-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.13);
+      color: #c74634;
+    }
+    .oracle-badge-card img {
+      width: 110px;
+      height: 110px;
+      object-fit: contain;
+      margin-bottom: 10px;
+    }
+    .oracle-badge-card .badge-title {
+      font-size: 0.78rem;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+    .oracle-badge-card .badge-year {
+      font-size: 0.72rem;
+      color: #888;
+      margin-top: 4px;
+    }
+    .oracle-logo-text {
+      font-size: 0.7rem;
+      color: #c74634;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+
+    /* Microsoft Badge Card */
+    .ms-badge-card {
+      background: #fff;
+      border: 1px solid #dee2e6;
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+      width: 180px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+      color: #333;
+      display: inline-block;
+    }
+    .ms-badge-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.13);
+      color: #0078d4;
+    }
+    .ms-badge-card img {
+      width: 110px;
+      height: 110px;
+      object-fit: contain;
+      margin-bottom: 10px;
+    }
+    .ms-badge-card .badge-title {
+      font-size: 0.78rem;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+    .ms-badge-card .badge-year {
+      font-size: 0.72rem;
+      color: #888;
+      margin-top: 4px;
+    }
+    .ms-logo-text {
+      font-size: 0.7rem;
+      color: #0078d4;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+    .ms-badge-meta {
+      font-size: 0.68rem;
+      color: #999;
+      margin-top: 3px;
+    }
+
+    /* IEEE paper badge */
+    .ieee-badge {
+      display: inline-block;
+      background: #00629B;
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-right: 8px;
+      vertical-align: middle;
+      letter-spacing: 0.5px;
+    }
+    .pub-card {
+      background: #fff;
+      border: 1px solid #dee2e6;
+      border-left: 4px solid #00629B;
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin-bottom: 14px;
+    }
+    .pub-card.conference {
+      border-left-color: #007bff;
+    }
+    .pub-meta {
+      font-size: 0.82rem;
+      color: #666;
+      margin-top: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container text-center mt-5">
+
+    <!-- Profile Picture -->
+    <img src="https://raw.githubusercontent.com/RetroJoshua/cse_contacts/refs/heads/master/passport%20photo.jpg?token=GHSAT0AAAAAADLKP74RPKDBULQD3VYUIM3I2GUFPEQ" class="profile-img mb-3" alt="Profile Photo">
+
+    <!-- Basic Info -->
+    <h1 class="fw-bold">Mr. Jhashuva Udayagiri</h1>
+    <h4>Assistant Professor, Dept. of AI/ML, CMRIT</h4>
+    <p>Ph.D (Pursuing) | M.Tech – CSE (2015) | B.Tech – CSE (2013)</p>
+    <p><strong>Experience:</strong> 8+ Years Teaching, Mentoring & Administrative Duties</p>
+
+    <!-- Contact Info -->
+    <div class="text-start">
+      <h3 class="section-title">Contact Information</h3>
+      <div class="platform-link">
+        <i class="fas fa-envelope platform-icon email-icon"></i>
+        <span>jhashuva.u@cmrit.ac.in</span>
+      </div>
+    </div>
+
+    <!-- Professional Memberships -->
+    <div class="text-start">
+      <h3 class="section-title">Professional Memberships</h3>
+      <div class="membership-item">
+        <img src="https://raw.githubusercontent.com/RetroJoshua/mywork/refs/heads/master/Association_for_Computing_Machinery_(ACM)_logo.svg.png" alt="ACM Logo" style="width:40px;height:40px;margin-right:12px;">
+        <span><strong>ACM</strong> (Association for Computing Machinery) – Membership No.: 8574395</span>
+      </div>
+      <div class="membership-item">
+        <img src="https://raw.githubusercontent.com/RetroJoshua/mywork/master/images.png" alt="AAAI Logo" style="width:40px;height:40px;margin-right:12px;">
+        <span><strong>AAAI</strong> (Association for Advancement of Artificial Intelligence) – Membership No.: 648605</span>
+      </div>
+    </div>
+
+    <!-- Profiles & Links -->
+    <div class="text-start">
+      <h3 class="section-title">Profiles & Links</h3>
+      <a href="https://github.com/RetroJoshua" target="_blank" class="platform-link">
+        <i class="fab fa-github platform-icon github-icon"></i>
+        <span>GitHub – RetroJoshua</span>
+      </a>
+      <a href="https://leetcode.com/u/HO0tNSUInG/" target="_blank" class="platform-link">
+        <i class="fas fa-code platform-icon leetcode-icon"></i>
+        <span>LeetCode – HO0tNSUInG</span>
+      </a>
+      <a href="https://www.kaggle.com/joshuaudyagiri" target="_blank" class="platform-link">
+        <i class="fab fa-kaggle platform-icon kaggle-icon"></i>
+        <span>Kaggle – joshuaudyagiri</span>
+      </a>
+      <a href="https://orcid.org/0000-0003-4987-4481" target="_blank" class="platform-link">
+        <i class="fab fa-orcid platform-icon orcid-icon"></i>
+        <span>ORCID – 0000-0003-4987-4481</span>
+      </a>
+      <a href="https://medium.com/@joshuaudayagiri" target="_blank" class="platform-link">
+        <i class="fab fa-medium platform-icon" style="color:#00ab6c;"></i>
+        <span>Medium – @joshuaudayagiri</span>
+      </a>
+    </div>
+
+    <!-- Research Papers / Publications -->
+    <div class="text-start">
+      <h3 class="section-title">Research Papers / Publications</h3>
+
+      <!-- IEEE Paper (Latest) -->
+      <div class="pub-card">
+        <div class="d-flex align-items-start">
+          <div>
+            <span class="ieee-badge">IEEE</span>
+            <strong>Attention-Based Deep Learning for Medical Insurance Cost Prediction: A Comparative Analysis of TabNet and Tabular Transformers</strong>
+            <div class="pub-meta">
+              <i class="fas fa-users me-1"></i> Jhashuva Udayagiri; Sidda Reddy V  | 
+              <i class="fas fa-calendar me-1"></i> 24–25 April 2026
+            </div>
+            <div class="pub-meta">
+              <i class="fas fa-book me-1"></i> <em>2026 4th International Conference on Knowledge Engineering and Communication Systems (ICKECS)</em>
+            </div>
+            <div class="pub-meta mt-1">
+              <a href="https://ieeexplore.ieee.org/document/11528016" target="_blank" class="text-decoration-none">
+                <i class="fas fa-external-link-alt me-1"></i> DOI: 10.1109/ICKECS70176.2026 — View on IEEE Xplore
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Earlier Publications -->
+      <div class="pub-card conference">
+        <i class="fas fa-file-alt me-2 text-primary"></i>
+        <strong>Assessing the Efficacy of Various Machine Learning Techniques in Human Activity Recognition with Smartphones</strong>
+        <div class="pub-meta">
+          <i class="fas fa-book me-1"></i> <em>International Conference ICNGSDSCA-24</em>, Cambridge Institute of Technology, KR Puram, Bengaluru  | 
+          <i class="fas fa-calendar me-1"></i> 20–21 December 2024
+        </div>
+      </div>
+
+      <div class="pub-card conference">
+        <i class="fas fa-file-alt me-2 text-primary"></i>
+        <strong>A Survey on Multidimensional Data Structures</strong>
+        <div class="pub-meta">
+          <i class="fas fa-book me-1"></i> <em>NCETCS'14</em>, Dept. of CSE, JNTU Vizianagaram  | 
+          <i class="fas fa-calendar me-1"></i> 23 March 2014
+        </div>
+      </div>
+    </div>
+
+    <!-- Certifications & Specializations -->
+    <div class="text-start">
+      <h3 class="section-title">Certifications & Specializations</h3>
+
+      <!-- Coursera Specializations -->
+      <ul class="mb-4">
+        <li><i class="fas fa-certificate me-2 text-success"></i> Completed <strong>Specialization: Python for Everybody</strong> from <em>University of Michigan</em> through Coursera.</li>
+        <li><i class="fas fa-certificate me-2 text-success"></i> Completed <strong>Specialization: Big Data</strong> from <em>University of California San Diego</em> through Coursera.</li>
+        <li><i class="fas fa-certificate me-2 text-success"></i> Completed <strong>Specialization: Google Cyber Security</strong> from <em>Google</em> through Coursera.</li>
+      </ul>
+
+      <!-- Oracle Certified Badges -->
+      <p class="fw-semibold mb-2"><i class="fas fa-shield-alt me-2 text-danger"></i>Oracle Cloud Infrastructure Certifications</p>
+      <div class="oracle-badges-grid">
+
+        <!-- Badge 1: OCI 2024 Foundations Associate -->
+        <a href="https://catalog-education.oracle.com/pls/certview/sharebadge?id=3E986DAB35D598F740319245A17EAFB5E4E25A4359CCFDE19193F14313B05075" target="_blank" class="oracle-badge-card">
+          <div class="oracle-logo-text">ORACLE</div>
+          <img src="https://brm-workforce.oracle.com/edu/images/certview/badges/OCI2024CAIA.png"
+               onerror="this.src='https://placehold.co/110x110/c74634/ffffff?text=OCI%0AFoundations'"
+               alt="OCI 2024 Foundations Associate Badge">
+          <div class="badge-title">Oracle Cloud Infrastructure 2024 Certified Foundations Associate</div>
+          <div class="badge-year">2024</div>
+        </a>
+
+        <!-- Badge 2: OCI 2025 AI Foundations Associate -->
+        <a href="https://catalog-education.oracle.com/pls/certview/sharebadge?id=86AEAAB2DA064E1B70DD87C5C27E1D0F132D955A13D611CD89AE247F7A6900E4" target="_blank" class="oracle-badge-card">
+          <div class="oracle-logo-text">ORACLE</div>
+          <img src="https://drive.google.com/thumbnail?id=1kh6JRd1byaAqqBEV41XMU0QU4JX_Hh7G&sz=w200"
+               onerror="this.src='https://placehold.co/110x110/c74634/ffffff?text=OCI%0AAI+Found.'"
+               alt="OCI 2025 AI Foundations Badge">
+          <div class="badge-title">Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate</div>
+          <div class="badge-year">2025</div>
+        </a>
+
+        <!-- Badge 3: OCI 2025 Generative AI Professional -->
+        <a href="https://catalog-education.oracle.com/pls/certview/sharebadge?id=3E986DAB35D598F740319245A17EAFB5E4E25A4359CCFDE19193F14313B05075" target="_blank" class="oracle-badge-card">
+          <div class="oracle-logo-text">ORACLE</div>
+          <img src="https://drive.google.com/thumbnail?id=1sBqQ184jYYdusSjdDC8p_t4EUZp34-XU&sz=w200"
+               onerror="this.src='https://placehold.co/110x110/c74634/ffffff?text=OCI%0AGen+AI+Pro'"
+               alt="OCI 2025 Generative AI Professional Badge">
+          <div class="badge-title">Oracle Cloud Infrastructure 2025 Certified Generative AI Professional</div>
+          <div class="badge-year">2025</div>
+        </a>
+
+      </div>
+
+      <!-- Microsoft Certification -->
+      <p class="fw-semibold mb-2 mt-4"><i class="fab fa-microsoft me-2" style="color:#0078d4;"></i>Microsoft Certifications</p>
+      <div style="display:flex;flex-wrap:wrap;gap:20px;margin-top:10px;">
+        <a href="https://learn.microsoft.com/en-us/users/joshua-4945/credentials/certification/azure-fundamentals" target="_blank" class="ms-badge-card">
+          <div class="ms-logo-text">MICROSOFT</div>
+          <img src="https://learn.microsoft.com/media/learn/certification/badges/microsoft-certified-fundamentals-badge.svg"
+               onerror="this.src='https://placehold.co/110x110/0078d4/ffffff?text=Azure%0AFundamentals'"
+               alt="Microsoft Certified: Azure Fundamentals Badge">
+          <div class="badge-title">Microsoft Certified: Azure Fundamentals</div>
+          <div class="badge-year">June 6, 2026</div>
+          <div class="ms-badge-meta">ID: 6F8E4481664F09BB</div>
+          <div class="ms-badge-meta">No: 24FF46-A5EICE</div>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Courses Taught -->
+    <div class="text-start">
+      <h3 class="section-title">Courses I Teach</h3>
+      <ul>
+        <li><i class="fas fa-robot me-2"></i>Operating Systems – <a href="https://drive.google.com/drive/folders/19tI6IuPWjP4ptL1nOPON3b4rjTgh_WVi?usp=sharing">Course Contents</a></li>
+        <li><i class="fas fa-brain me-2"></i>Cloud Computing & Security – <a href="https://drive.google.com/drive/folders/1g1GaXB_2GqBnp-kWppn_skU8ZIogL1Jv?usp=sharing">Course Contents</a></li>
+        <li><i class="fas fa-network-wired me-2"></i>Object Oriented Programming through Java</li>
+        <li><i class="fas fa-chart-line me-2"></i>Python Programming</li>
+        <li><i class="fas fa-laptop-code me-2"></i>Computer Science Core Courses</li>
+      </ul>
+    </div>
+
+    <!-- Projects -->
+    <div class="text-start">
+      <h3 class="section-title">Projects</h3>
+      <div class="mb-3">
+        <h5 class="mb-1">
+          <a href="https://cpu-scheduling-simulator-eight.vercel.app/" target="_blank" class="text-decoration-none">
+            CPU Scheduling Simulator
+          </a>
+        </h5>
+        <p class="mb-0">Interactive CPU scheduling simulator. <a href="https://cpu-scheduling-simulator-eight.vercel.app/" target="_blank">View project</a></p>
+      </div>
+
+      <!-- PolicyGraph -->
+      <div class="mb-3 p-3" style="background:#fff;border:1px solid #dee2e6;border-left:4px solid #333;border-radius:8px;">
+        <h5 class="mb-1 d-flex align-items-center flex-wrap gap-2">
+          <i class="fab fa-github" style="color:#333;"></i>
+          <a href="https://github.com/RetroJoshua/PolicyGraph" target="_blank" class="text-decoration-none text-dark">
+            PolicyGraph
+          </a>
+          <span style="background:#238636;color:#fff;font-size:0.65rem;padding:3px 8px;border-radius:12px;">Open Source</span>
+          <span style="background:#0d1117;color:#58a6ff;font-size:0.65rem;padding:3px 8px;border-radius:12px;">GNN · Python · Security</span>
+        </h5>
+        <p class="mb-1" style="font-size:0.9rem;color:#444;">
+          <strong>Graph Neural Networks for IAM Policy Security Analysis.</strong>
+          Models AWS IAM policies as heterogeneous graphs and applies Graph Attention Networks (GAT) to detect privilege escalation paths, overly permissive policies, and transitive trust relationships — achieving an <strong>F1 score of 0.92</strong> and <strong>2.5× higher privilege escalation detection</strong> than traditional tools like Checkov, tfsec, and Prowler.
+        </p>
+        <div style="font-size:0.82rem;color:#555;" class="mt-1">
+          <i class="fas fa-microchip me-1 text-primary"></i> Graph Attention Networks (GAT) &nbsp;|&nbsp;
+          <i class="fas fa-shield-alt me-1 text-danger"></i> 21+ Privilege Escalation Techniques &nbsp;|&nbsp;
+          <i class="fas fa-database me-1 text-success"></i> 108 Curated IAM Policies Dataset
+        </div>
+        <div class="mt-2">
+          <a href="https://github.com/RetroJoshua/PolicyGraph" target="_blank" class="btn btn-sm btn-outline-dark">
+            <i class="fab fa-github me-1"></i> View on GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-5 mb-3">
+      <p class="text-muted">© 2025 CMRIT | Personal Portfolio</p>
+    </footer>
+  </div>
+</body>
+</html>
